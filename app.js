@@ -1,6 +1,8 @@
 var express = require('express'),
-	routes = require('./routes');
-	user = require('./routes/users');
+	load = require('express-load'),
+	//ROTAS (ANTES DE VERMOS CONTROLLERS)
+	//routes = require('./routes');
+	//user = require('./routes/users');
 	http = require('http');
 	path = require('path');
 
@@ -24,9 +26,11 @@ if('development' == app.get('env')){
 	app.use(express.errorHandler());
 }	
 
-app.get('/', routes.index);
-app.get('/teste', routes.teste);
-app.get('/users', user.list);
+//app.get('/', routes.index);
+//app.get('/teste', routes.teste);
+//app.get('/users', user.list);
+
+load('models').then('controllers').then('routes').into(app);
 
 app.listen(3000, function() {
     console.log('Express server listening on port 3000');
