@@ -1,3 +1,6 @@
+
+var moment = require('moment');
+
 module.exports = function(app){
 	
 	var Usuario = app.models.usuarios;
@@ -8,7 +11,7 @@ module.exports = function(app){
 				if(err){
 					console.log(err);
 				}
-				res.render('usuarios/index', {listUser: data});
+				res.render('usuarios/index', {listUser: data, moment:moment});
 			});
 		},
 		create: function(req, res){
@@ -44,7 +47,7 @@ module.exports = function(app){
 				if(err){
 					console.log(err);
 				}else{
-				res.render('usuarios/show', {user: data});
+				res.render('usuarios/show', {user: data, moment:moment});
 				}
 			});
 		},
