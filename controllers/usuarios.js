@@ -23,6 +23,7 @@ module.exports = function(app){
 					console.log(err);
 				}else{
 					//res.json(data);
+					req.flash('info', 'User created successfuly');
 					res.redirect('/usuarios');
 				}
 			});
@@ -34,6 +35,27 @@ module.exports = function(app){
 					console.log(err);
 				}else{
 				res.render('usuarios/edit', {user: data});
+				}
+			});
+		},
+		show: function(req, res){
+			//Usuario.findOne({_id: req.params.id});			
+			Usuario.findById(req.params.id, function(err, data){
+				if(err){
+					console.log(err);
+				}else{
+				res.render('usuarios/show', {user: data});
+				}
+			});
+		},
+		remove: function(req, res){
+			//Usuario.findOne({_id: req.params.id});			
+			Usuario.remove({_id:req.params.id}, function(err, data){
+				if(err){
+					console.log(err);
+				}else{
+					req.flash('info', 'User removed successfuly');
+					res.redirect('/usuarios');
 				}
 			});
 		},
@@ -54,7 +76,8 @@ module.exports = function(app){
 						if(err){
 							console.log(err);
 						}else{
-							res.render('usuarios');
+							req.flash('info', 'User udated successfuly');
+							res.redirect('/usuarios');
 						}
 					});
 				}

@@ -6,6 +6,6 @@ module.exports = function(app){
 	app.get('/usuarios/list', usuarios.list);
 	app.get('/usuarios/edit/:id', usuarios.edit);
 	app.put('/usuarios/edit/:id', usuarios.update);
-	//app.get('/usuarios/show/:id', usuarios.show);
-	//app.get('/usuarios/delete/:id', usuarios.delete);
+	app.get('/usuarios/show/:id', usuarios.show);
+	app.delete('/usuarios/delete/:id', usuarios.remove);
 }
