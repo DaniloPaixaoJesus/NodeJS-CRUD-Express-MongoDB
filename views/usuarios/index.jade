@@ -26,6 +26,8 @@ block content
 					td #{user.login}
 					td #{user.date_cad}
 					td
-						a(href="/usuarios/edit/#{user._id}", title="Edit", class="btn btn-info") Edit
+						a(href="/usuarios/edit/#{user._id}", title="Edit", class="btn btn-info")
+							span(class="glyphicon glyphicon-pencil")
 						&nbsp
-						a(href="/usuarios/show/#{user._id}", title="Edit", class="btn btn-primary") View
+						a(href="/usuarios/show/#{user._id}", title="Edit", class="btn btn-primary")
+							span(class="glyphicon glyphicon-search")

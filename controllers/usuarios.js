@@ -37,6 +37,26 @@ module.exports = function(app){
 				}
 			});
 		},
+		show: function(req, res){
+			//Usuario.findOne({_id: req.params.id});			
+			Usuario.findById(req.params.id, function(err, data){
+				if(err){
+					console.log(err);
+				}else{
+				res.render('usuarios/show', {user: data});
+				}
+			});
+		},
+		remove: function(req, res){
+			//Usuario.findOne({_id: req.params.id});			
+			Usuario.remove({_id:req.params.id}, function(err, data){
+				if(err){
+					console.log(err);
+				}else{
+					res.redirect('/usuarios');
+				}
+			});
+		},
 		update: function(req, res){
 			//res.render('usuarios/edit');
 			//Usuario.findOne({_id: req.params.id});
