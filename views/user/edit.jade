@@ -3,7 +3,7 @@ extends ../layout
 block content
 	h1 Update User
 	br
-	form(method="POST", action="/usuarios/edit/#{user._id}", role="form")
+	form(method="POST", action="/user/edit/#{user._id}", role="form")
 		input(type="hidden", name="_method", value="put")
 		div(class="form-group")
 			label Name:
@@ -16,4 +16,4 @@ block content
 			input(type="password", name="password", class="form-control")
 		input(type="submit", value="Update", class="btn btn-success")
 		&nbsp
-		a(href="/usuarios" title="home", class="btn btn-warning") Back
+		a(href="/user" title="home", class="btn btn-warning") Back

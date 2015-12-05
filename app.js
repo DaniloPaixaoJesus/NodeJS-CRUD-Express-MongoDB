@@ -6,11 +6,12 @@ var flash = require('express-flash');
 var app = express();
 
 /**  MongoDB connection **/
-mongoose.connect('mongodb://localhost/aulaCrud', function(err){
+var connstr = 'mongodb://danilopaixao:88878685@ds057254.mongolab.com:57254/apptanamaodb';
+//var connstr = 'mongodb://localhost/aulaCrud';
+mongoose.connect(connstr, function(err){
 	if(err) console.log('Error connect database: '+ err);
 	console.log('DataBase connected');
 });
-//mongoose.connect('mongodb://username:password@host:port/database?options...');
 
 // view engine setup
 //app.set('port', process.env.PORT || 3000);
@@ -36,7 +37,7 @@ if('development' == app.get('env')){
 }	
 
 load('models').then('controllers').then('routes').into(app);
-
-app.listen(3000, function() {
-    console.log('Express server listening on port 3000');
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+    console.log('Express server listening on port '+port);
 });

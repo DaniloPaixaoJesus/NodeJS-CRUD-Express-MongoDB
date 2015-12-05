@@ -3,7 +3,7 @@ extends ../layout
 block content
 	h1 Create new User
 	br
-	form(method="POST", action="/usuarios/create", role="form")
+	form(method="POST", action="/user/create", role="form")
 		div(class="form-group")
 			label Name:
 			input(type="text", name="name", class="form-control")
@@ -15,4 +15,4 @@ block content
 			input(type="password", name="password", class="form-control")
 		input(type="submit", value="Confirm", class="btn btn-success")
 		&nbsp
-		a(href="/usuarios" title="home", class="btn btn-warning") Back
+		a(href="/user" title="home", class="btn btn-warning") Back

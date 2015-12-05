@@ -1,11 +1,11 @@
 module.exports = function(app){
-	var usuarios = app.controllers.usuarios;	
-	app.get('/usuarios', usuarios.index); //action index
-	app.get('/usuarios/create', usuarios.create); //action create get
-	app.post('/usuarios/create', usuarios.insert); //action create post
-	app.get('/usuarios/list', usuarios.list);
-	app.get('/usuarios/edit/:id', usuarios.edit);
-	app.put('/usuarios/edit/:id', usuarios.update);
-	app.get('/usuarios/show/:id', usuarios.show);
-	app.delete('/usuarios/delete/:id', usuarios.remove);
+	var UserController = app.controllers.ControllerUser;	
+	app.get('/user', UserController.index); //action index
+	app.get('/user/create', UserController.create); //action create get
+	app.post('/user/create', UserController.insert); //action create post
+	app.get('/user/list', UserController.list);
+	app.get('/user/edit/:id', UserController.edit);
+	app.put('/user/edit/:id', UserController.update);
+	app.get('/user/show/:id', UserController.show);
+	app.delete('/user/delete/:id', UserController.remove);
 }

@@ -12,7 +12,7 @@ module.exports = function(){
 			}
 		}
 	);
-	return mongoose.model('Usuarios', usuario);
+	return mongoose.model('user', usuario);
 }
 
 /*
