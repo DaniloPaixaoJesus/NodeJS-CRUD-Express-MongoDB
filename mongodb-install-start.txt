@@ -1,3 +1,7 @@
+dev mode
+start with
+nodemon app
+
 https://www.youtube.com/watch?v=fpm5BA7FmRM
 
 cd c:

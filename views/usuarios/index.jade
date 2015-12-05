@@ -1,6 +1,31 @@
 extends ../layout
 
 block content
-	h1 Users
+	h1 List of Users
+	hr
 	br
-	a(href="/" title="home") Back
+	if msgUpdate
+		div(class="alert alert-info") 
+			p Data updated successfuly
+	br
+	a(href="/usuarios/create" title="New User", class="btn btn-success") New User
+	br
+	br
+	table(class="table well")
+		thread
+			tr
+				th ID:
+				th Name:
+				th Login:
+				th Date:
+		tbody
+			each user, i in listUser 
+				tr
+					td #{user._id}
+					td #{user.name}
+					td #{user.login}
+					td #{user.date_cad}
+					td
+						a(href="/usuarios/edit/#{user._id}", title="Edit", class="btn btn-info") Edit
+						&nbsp
+						a(href="/usuarios/show/#{user._id}", title="Edit", class="btn btn-primary") View
