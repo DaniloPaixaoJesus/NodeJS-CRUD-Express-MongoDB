@@ -1,0 +1,29 @@
+https://www.youtube.com/watch?v=fpm5BA7FmRM
+
+cd c:
+cd C:\Program Files\MongoDB\Server\3.0\bin
+mongod
+#create a file in c:/data/db
+
+banco já criado aulasDBTest
+
+--Connect mongolab
+To connect using the mongo shell:
+mongo ds057254.mongolab.com:57254/apptanamaodb -u <dbuser> -p <dbpassword>
+To connect using a driver via the standard MongoDB URI (what's this?):
+  mongodb://<dbuser>:<dbpassword>@ds057254.mongolab.com:57254/apptanamaodb
+
+-- insert command
+use dbExemplo
+show collections
+
+db.CollectionExemplo.insert({campo:"valor})
+db.CollectionExemplo.find()
+db.CollectionExemplo.find().toArray()
+db.CollectionExemplo.findOne({nome:"valor"})
+
+var row = db.CollectionExemplo.findOne({nome:"valor"})
+row.nome = "BLA"
+db.CollectionExemplo.save(row)
+db.CollectionExemplo.find()
+
